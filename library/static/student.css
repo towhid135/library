@@ -1,0 +1,39 @@
+body{
+  background: url("library.jpg");
+  height: 100%
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.loginbox{
+	width: 320px;
+	height: 450px;
+	top:50%;
+	left:50%;
+	background:black;
+	color:white;
+	position:absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	padding:50px 30px;
+}
+
+h2{
+	margin:0;
+	padding:0 0 20px;
+	text-align:center;
+	font-size:22px;
+}
+.loginbox input{
+	width:100%;
+	margin-bottom:20px;
+}
+.loginbox input[type="submit"]
+{
+	border:none;
+	outline:none;
+	height:40px;
+	background:green;
+	color:white;
+	font-size:18px;
+}

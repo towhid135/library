@@ -1,0 +1,43 @@
+{%load static%}
+
+<html>
+
+<head>
+<title> library management system </title>
+</head>
+
+<body>
+
+<h1 align="center"> <font size="+20" color="white">Welcome To The Library </font> </h1>
+<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\style.css'%}" >
+
+<div class="loginbox">
+    <img src="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\login_image.png'%}" class="login_image">
+	<h2>Login Here</h2>
+	<form>
+	   <p> Role </p>
+	   <select>
+
+	   <option selected>Please select one</option>
+	   <option value="Member">Member</option>
+	   <option value="Librarian">Librarian</option>
+
+	   </select>
+
+	   <p>User name</p>
+	   <input type="text" name="username" placeholder="Enter username">
+
+	   <p>password</p>
+	   <input type="password" name="password" placeholder="Enter password">
+	   <input type="submit" name="" value="Login" formaction="http://127.0.0.1:8000/adminview/"> <br>
+
+	   <a href="http://127.0.0.1:8000/forgot/"> <font color="white"> Forgotten password? </font> </a><br>
+       <a href="http://127.0.0.1:8000/sign/"> <font color="white"> Don't have an account? </font> </a>
+	</form>
+</div>
+
+
+</body>
+
+
+</html>
