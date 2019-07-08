@@ -1,0 +1,33 @@
+{%load static%}
+
+<html>
+
+<head>
+<title> library management system </title>
+</head>
+
+<body>
+
+<h1 align="center"> <font size="+20" color="white">Welcome To The Library </font> </h1>
+<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\style.css'%}" >
+
+<div class="loginbox">
+    <img src="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\login_image.png'%}" class="login_image">
+	<h2>Login Here</h2>
+	<form action="" method="POST">
+        {% csrf_token %}
+
+	   <p>User name</p>
+	   <input type="text" name="name" placeholder="Enter username">
+
+	   <p>password</p>
+	   <input type="password" name="password" placeholder="Enter password">
+	   <input type="submit" name="" value="Login">
+	</form>
+</div>
+
+
+</body>
+
+
+</html>

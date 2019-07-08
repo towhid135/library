@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+def exam(request):
+    return render(request,"example.html")
 def home(request):
     return render(request,"home.html")
 def usersignup(request):

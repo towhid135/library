@@ -12,21 +12,22 @@
 
 <div class="signupbox">
 	<h1 align="center">signup</h1>
-	<form>
+	<form action="" method="POST">
+		{% csrf_token %}
 	   <p>User name</p>
-	   <input type="text" name="username" placeholder="Enter Username">
+	   <input type="text" name="user" placeholder="Enter Username">
 
 	   <p>Password</p>
 	   <input type="password" name="password" placeholder="Enter Password">
 
 		<p>Name</p>
-	   <input type="text" name="" placeholder="Enter Your Name">
+	   <input type="text" name="name" placeholder="Enter Your Name">
 
 		<p>Department</p>
-	   <input type="text" name="" placeholder="Enter Department Name">
+	   <input type="text" name="department" placeholder="Enter Department Name">
 
 		<p>ID</p>
-	   <input type="text" name="" placeholder="Enter Your ID">
+	   <input type="text" name="ID" placeholder="Enter Your ID">
 
 	   <p> Sequirity Question </p>
 	   <select>
@@ -48,7 +49,7 @@
 	   <option value="Librarian">Librarian</option>
 
 	   </select><br>
-	   <input type="submit" name="" value="Submit" formaction="login button press result address">
+	   <input type="submit" name="" value="Submit">
 	   <input type="submit" name="" value="Back" formaction="http://127.0.0.1:8000/">
 
 
