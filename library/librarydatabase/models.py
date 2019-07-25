@@ -43,7 +43,6 @@ class returnbook(models.Model):
     bookid = models.ForeignKey(newbook,on_delete=models.CASCADE)
     bookname = models.CharField(max_length=200,default="null")
     author = models.CharField(max_length=200,default="null")
-    issuedate = models.DateField(auto_now_add=False,auto_now=False,blank=True)
     returndate = models.DateField(auto_now_add=False,auto_now=False,blank=True)
 
     def __str__(self):

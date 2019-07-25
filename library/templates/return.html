@@ -11,24 +11,15 @@
 
 <div class="loginbox">
        <h1 align="center">Return</h1>
-	   <form>
-
+	   <form action="" method="POST">
+       {%csrf_token%}
 	   <p>Member Id</p>
-	   <input type="text" name="" placeholder="Member ID">
-	    <p>Member name</p>
-	   <input type="text" name="" placeholder="Name">
-	    <p>Department</p>
-	   <input type="text" name="" placeholder="Enter Your Department">
+	   <input type="text" name="r_mid" placeholder="Enter Your Id">
 	    <p>Book ID</p>
-	   <input type="text" name="" placeholder="Book Id">
-	    <p>Book Name</p>
-	   <input type="text" name="" placeholder="Enter yhe book name">
-	   <p>Author</p>
-	   <input type="text" name="" placeholder="Author">
-	    <p>Date Of Issue</p>
-	   <input type="date" name="" placeholder="Date of Issue">
+	   <input type="text" name="r_bid" placeholder="Enter Your Book Id">
 	    <p>Date Of Return</p>
-	   <input type="date" name="" placeholder="Date of return">
+	   <input type="date" name="r_date" >
+		<input type="submit" value="submit">
 
 	   	</form>
 </div>

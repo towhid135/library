@@ -1,13 +1,59 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.contrib import messages
-from django.shortcuts import render
 from librarydatabase import models
 
 def returnbook(request):
-    return render(request,"return.html")
+    if (request.method=='POST'):
+        r_mid = request.POST.get("r_mid")
+        r_bid = request.POST.get("r_bid")
+        return_date = request.POST.get("r_date")
+        if r_mid and r_bid and return_date:
+            getissue = models.issuebook.objects.get(memberid=r_mid, bookid=r_bid)
+            if getissue:
+                print("first if")
+                getmem = models.signtable.objects.get(memberid=r_mid)
+                getbook = models.newbook.objects.get(bookid=r_bid)
+                if getmem and getbook:
+                    print("second if")
+                    objreturn = models.returnbook(memberid=getmem, name=getmem.name, department=getmem.department,
+                                                  bookid=getbook, bookname=getbook.bookname, author=getbook.author,
+                                                  returndate=return_date)
+                    objreturn.save()
+                    getissue.delete()
+                    return render(request, "return.html")
+                else:
+                    print("first else")
+                    return render(request, "return.html")
+            else:
+                print("second else")
+                return render(request, "return.html")
+        else:
+            return render(request, "return.html")
+
+    else:
+        print("third else")
+        return render(request,"return.html")
+
+
+
 def issuebook(request):
-    return render(request,"issue.html")
+    if (request.method=='POST'):
+        i_mid = request.POST.get("i_mid")
+        i_bid = request.POST.get("i_bid")
+        issue_date = request.POST.get("i_date")
+        if i_mid and i_bid and issue_date:
+            getmem = models.signtable.objects.get(memberid=i_mid)
+            getbook = models.newbook.objects.get(bookid=i_bid)
+            if getmem and getbook:
+                objissue = models.issuebook(memberid=getmem, name=getmem.name, department=getmem.department, bookid=getbook, bookname=getbook.bookname, author=getbook.author,issuedate=issue_date)
+                objissue.save()
+                return render(request, "issue.html")
+            else:
+                return render(request, "issue.html")
+        else:
+            return render(request, "issue.html")
+    else:
+        return render(request,"issue.html")
 
 
 def search(request):
@@ -38,17 +84,20 @@ def home(request):
         h_role = request.POST.get("h_role")
         h_user = request.POST.get("h_user")
         h_pass = request.POST.get("h_pass")
-        cheak = models.signtable.objects.filter(role=h_role, user=h_user, password=h_pass)
-        print(h_role+" "+h_user+" "+h_pass);
-        if cheak:
-            if h_role == "Librarian" :
-                return render(request,"foradmin.html")
-            elif h_role=="Member":
-               return render(request, "forstudent.html")
+        if h_role and h_user and h_pass:
+            cheak = models.signtable.objects.filter(role=h_role, user=h_user, password=h_pass)
+            if cheak:
+                if h_role == "Librarian":
+                    return render(request, "foradmin.html")
+                elif h_role == "Member":
+                    print("yes")
+                    return render(request, "forstudent.html")
+                else:
+                    return render(request, "home.html")
             else:
-                return render(request,"home.html")
+                return render(request, "home.html")
         else:
-            return render(request,"home.html")
+            return render(request, "home.html")
 
     else:
         return render(request,"home.html")
@@ -62,13 +111,15 @@ def usersignup(request):
         s_id = request.POST.get("s_id")
         s_phone = request.POST.get("s_phone")
         s_role = request.POST.get("s_role")
-        obj2 = models.signtable(user = s_user,password = s_pass,name = s_name,department = s_depart,memberid = s_id,phone = s_phone,role = s_role)
-        obj2.save()
-        if obj2:
-            return render(request,"home.html")
+        if s_user and s_pass and s_name and s_depart and s_id and s_phone and s_role:
+            obj2 = models.signtable(user=s_user, password=s_pass, name=s_name, department=s_depart, memberid=s_id,phone=s_phone, role=s_role)
+            obj2.save()
+            print("returning home")
+            return render(request, "home.html")
         else:
-            return render(request,"signup.html")
+            return home(request)
     else:
+        print("returning signup")
         return render(request, "signup.html")
 
 def forgotpass(request):
@@ -107,6 +158,7 @@ def foradmin(request):
 def forstudent(request):
     return render(request, "forstudent.html")
 def showbook(request):
+    #issueinfo= models.issuebook.objects.all()
     bookinfo = models.newbook.objects.all()
     context = {"book":bookinfo}
     return render(request,'available.html',context)
