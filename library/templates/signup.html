@@ -15,42 +15,26 @@
 	<form action="" method="POST">
 		{% csrf_token %}
 	   <p>User name</p>
-	   <input type="text" name="user" placeholder="Enter Username">
+	   <input type="text" name="s_user" placeholder="Enter Username">
 
 	   <p>Password</p>
-	   <input type="password" name="password" placeholder="Enter Password">
+	   <input type="password" name="s_pass" placeholder="Enter Password">
 
 		<p>Name</p>
-	   <input type="text" name="name" placeholder="Enter Your Name">
+	   <input type="text" name="s_name" placeholder="Enter Your Name">
 
 		<p>Department</p>
-	   <input type="text" name="department" placeholder="Enter Department Name">
+	   <input type="text" name="s_depart" placeholder="Enter Department Name">
 
 		<p>ID</p>
-	   <input type="text" name="ID" placeholder="Enter Your ID">
+	   <input type="text" name="s_id" placeholder="Enter Your ID">
 
-	   <p> Sequirity Question </p>
-	   <select>
-
-	   <option selected>Please select one</option>
-	   <option value="university">what is your university name?</option>
-	   <option value="nickname">what is your nick name?</option>
-	   <option value="bestfriend">what is your best friend name?</option>
-
-	   </select>
-	   <p>Answer</p>
-	   <input type="text" name="username" placeholder="give your answer">
-
-	   <p> Role </p>
-	   <select>
-
-	   <option selected>Please select one</option>
-	   <option value="Member">Member</option>
-	   <option value="Librarian">Librarian</option>
-
-	   </select><br>
+	   <p>Phone Number</p>
+	   <input type="text" name="s_phone" placeholder="Enter your Phone number">
+		<p>Role(Librarian or Member)</p>
+	   <input type="text" name="s_role" placeholder="Enter your role">
 	   <input type="submit" name="" value="Submit">
-	   <input type="submit" name="" value="Back" formaction="http://127.0.0.1:8000/">
+	   <input type="submit" name="" value="Back">
 
 
 	</form>

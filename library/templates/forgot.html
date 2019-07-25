@@ -11,22 +11,19 @@
 
 <div class="signupbox">
 	<h1 align="center">Password?</h1>
-	<form>
+	<form action="" method="POST">
+		{%csrf_token%}
 	   <p>User name</p>
-	   <input type="text" name="username" placeholder="Enter Username">
-	   <input type="submit" name="" value="Search" formaction="login button press result address">
+	   <input type="text" name="f_user" placeholder="Enter Username">
 
-	   <p>name</p>
-	   <input type="password" name="password" placeholder="">
-
-	   <p>Your Sequirity Question? </p>
-	   <input type="text" name="username" placeholder="">
-	   <p>Answer</p>
-	   <input type="text" name="username" placeholder="give your answer">
-	   <input type="submit" name="" value="Retrive" formaction="login button press result address">
+	   <p>Phone number</p>
+	   <input type="text" name="f_phone" placeholder="enter your phone number">
+		{% for retrive in getpass %}
 	   <p>Your Password</p>
-	   <input type="text" name="username" placeholder="">
-	   <input type="submit" name="" value="Back" formaction="http://127.0.0.1:8000/">
+	   <input type="text" name="f_pass" value="{{retrive.password}}">
+		{% endfor %}
+	   <input type="submit" name="" value="submit">
+		<input type="submit" name="" value="Back" formaction="http://127.0.0.1:8000/">
 
 	</form>
 </div>

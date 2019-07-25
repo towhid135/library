@@ -11,31 +11,30 @@
 
 <div class="loginbox">
 	<h2>Add New Book</h2>
-	<form>
-
-	   </select>
+	<form action="" method="POST">
+		{% csrf_token %}
 
 	   <p>Book name</p>
-	   <input type="text" name="Book name" placeholder="Enter Book Name">
+	   <input type="text" name="name1" placeholder="Enter Book Name">
 
 	   <p>Book ID</p>
-	   <input type="text" name="Book ID" placeholder="Enter Book ID">
+	   <input type="text" name="id1" placeholder="Enter Book ID">
 
 	   <p>Edition</p>
-	   <input type="text" name="Book Edition" placeholder="Enter Book Edition">
+	   <input type="text" name="edition1" placeholder="Enter Book Edition">
 
 	   <p>Price</p>
-	   <input type="text" name="Book Price" placeholder="Enter Book Price">
+	   <input type="text" name="price1" placeholder="Enter Book Price">
 
 	   <p>Pages</p>
-	   <input type="text" name="Book pages" placeholder="Enter Book pages">
+	   <input type="text" name="page1" placeholder="Enter Book pages">
 
 	   <p>Author</p>
-	   <input type="text" name="Book Author" placeholder="Enter Author's name">
+	   <input type="text" name="author1" placeholder="Enter Author's name">
 
 	   <p>Book Genre</p>
-	   <input type="text" name="Book Genre" placeholder="Enter Book Genre">
-		<input type="submit" name="" value="Submit" formaction="http://127.0.0.1:8000/adminview/">
+	   <input type="text" name="genre1" placeholder="Enter Book Genre">
+		<input type="submit" name="" value="Submit">
 
 	</form>
 </div>

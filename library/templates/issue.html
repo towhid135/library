@@ -1,0 +1,39 @@
+{%load static%}
+<html>
+
+<head>
+<title> library management system </title>
+</head>
+
+<body>
+
+<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\styletoreturn.css'%}" >
+
+<div class="loginbox">
+       <h1 align="center">Issue</h1>
+	   <form action="" method="POST">
+		   {%csrf_token%}
+
+	   <p>Member Id</p>
+	   <input type="text" name="i_mid" placeholder="Member ID">
+	    <p>Member name</p>
+	   <input type="text" name="i_mname" placeholder="Name">
+	    <p>Department</p>
+	   <input type="text" name="i_depart" placeholder="Enter Your Department">
+	    <p>Book ID</p>
+	   <input type="text" name="i_bid" placeholder="Book Id">
+	    <p>Book Name</p>
+	   <input type="text" name="i_bname" placeholder="Enter yhe book name">
+	   <p>Author</p>
+	   <input type="text" name="i_author" placeholder="Author">
+	    <p>Date Of Issue</p>
+	   <input type="date" name="i_date" placeholder="Date of Issue">
+       <input type="submit" name="" value="submit">
+	   	</form>
+</div>
+
+
+</body>
+
+
+</html>

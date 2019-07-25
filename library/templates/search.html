@@ -1,0 +1,40 @@
+{%load static%}
+<html>
+
+<head>
+<title> library management system </title>
+</head>
+
+<body>
+
+<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\search.css'%}" >
+
+<div class="availablebox">
+	<form action="" method="POST">
+       {%csrf_token%}
+	   <h2 align="center">Search Books</h2>
+        <input type="text" name="findbookname" placeholder="Enter book name"> <input type="submit"  value="search">
+        <table style="height:50%">
+  <tr style="background-color:white">
+    <th>BookID</th>
+    <th>Name</th>
+    <th>Author</th>
+  </tr>
+   {% for fb in find %}
+  <tr style="background-color:white">
+
+    <td width="600">{{fb.bookid}}</td>
+    <td width="600">{{fb.bookname}}</td>
+    <td width="600">{{fb.author}}</td>
+
+  </tr>
+    {%endfor%}
+
+
+   </table>
+        <input type="submit" name="s_issue" value="Issue Book" formaction="http://127.0.0.1:8000/issue/">
+
+	</form>
+</div>
+
+</body>

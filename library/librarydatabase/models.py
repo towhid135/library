@@ -2,14 +2,13 @@ from django.db import models
 from datetime import datetime,date
 
 class signtable(models.Model):
-    user = models.CharField(max_length=200,default="null")
-    password = models.CharField(max_length=200, default="null")
-    name = models.CharField(max_length=200, default="null")
-    department = models.CharField(max_length=200, default="null")
-    memberid = models.CharField(max_length=200,primary_key=True,default="null")
-    sequrity = models.CharField(max_length=200, default="null")
-    answer = models.CharField(max_length=200, default="null")
-    role = models.CharField(max_length=200, default="null")
+    user = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
+    department = models.CharField(max_length=200)
+    memberid = models.CharField(max_length=200,primary_key=True)
+    phone = models.CharField(max_length=200)
+    role = models.CharField(max_length=200)
 
     def __str__(self):
        return self.name+"-"+self.memberid
@@ -49,3 +48,9 @@ class returnbook(models.Model):
 
     def __str__(self):
         return self.bookname+"-"+self.name
+
+class testing(models.Model):
+    myname = models.CharField(max_length=200,default="null")
+    password = models.CharField(max_length=200,default="null")
+    def __str__(self):
+        return self.myname+"-"+self.password

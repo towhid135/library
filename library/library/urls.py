@@ -10,6 +10,10 @@ urlpatterns = [
     path('addnewbook/',views.addnewbook),
     path('adminview/',views.foradmin),
     path('studentview/', views.forstudent),
+    path('return/', views.returnbook),
+    path('issue/', views.issuebook),
+    path('available/',views.showbook),
+    path('search/',views.search),
     path('admin/', admin.site.urls),
 ]
 

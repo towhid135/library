@@ -1,5 +1,6 @@
 {%load static%}
 
+
 <html>
 
 <head>
@@ -14,15 +15,17 @@
 <div class="loginbox">
     <img src="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\login_image.png'%}" class="login_image">
 	<h2>Login Here</h2>
-	<form action="" method="POST">
+	<form action="">
         {% csrf_token %}
-
+       {% for i in tes%}
 	   <p>User name</p>
-	   <input type="text" name="name" placeholder="Enter username">
+	   <input type="text"  placeholder="{{i.myname}}">
 
 	   <p>password</p>
-	   <input type="password" name="password" placeholder="Enter password">
-	   <input type="submit" name="" value="Login">
+	   <input type="password"  placeholder="{{i.password}}">
+		{%endfor%}
+
+	   <input type="submit" name="pracsubmit" value="Login">
 	</form>
 </div>
 
@@ -31,3 +34,4 @@
 
 
 </html>
+
