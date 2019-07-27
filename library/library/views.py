@@ -12,13 +12,13 @@ def returnbook(request):
             if getissue:
                 print("first if")
                 getmem = models.signtable.objects.get(memberid=r_mid)
-                getbook = models.newbook.objects.get(bookid=r_bid)
+                getbook = models.issuebook.objects.get(bookid=r_bid)
                 if getmem and getbook:
                     print("second if")
-                    objreturn = models.returnbook(memberid=getmem, name=getmem.name, department=getmem.department,
-                                                  bookid=getbook, bookname=getbook.bookname, author=getbook.author,
-                                                  returndate=return_date)
+                    objreturn = models.returnbook(memberid=getmem, name=getmem.name, department=getmem.department,bookid=getbook.bookid, bookname=getbook.bookname, author=getbook.author,edition=getbook.edition,price=getbook.price,page=getbook.page,genre=getbook.genre,returndate=return_date)
                     objreturn.save()
+                    obj_add_book = models.newbook(bookname = getbook.bookname,bookid = r_bid,edition = getbook.edition,price = getbook.price,page = getbook.page,author = getbook.author,genre = getbook.genre)
+                    obj_add_book.save()
                     getissue.delete()
                     return render(request, "return.html")
                 else:
@@ -45,8 +45,12 @@ def issuebook(request):
             getmem = models.signtable.objects.get(memberid=i_mid)
             getbook = models.newbook.objects.get(bookid=i_bid)
             if getmem and getbook:
-                objissue = models.issuebook(memberid=getmem, name=getmem.name, department=getmem.department, bookid=getbook, bookname=getbook.bookname, author=getbook.author,issuedate=issue_date)
+                objissue = models.issuebook(memberid=getmem, name=getmem.name, department=getmem.department, bookid=getbook.bookid, bookname=getbook.bookname, author=getbook.author,edition = getbook.edition,price = getbook.price,page = getbook.page,genre = getbook.genre,issuedate=issue_date)
+                #print("true")
                 objissue.save()
+                getbook.delete()
+
+
                 return render(request, "issue.html")
             else:
                 return render(request, "issue.html")
@@ -158,7 +162,13 @@ def foradmin(request):
 def forstudent(request):
     return render(request, "forstudent.html")
 def showbook(request):
-    #issueinfo= models.issuebook.objects.all()
+    issueinfo= models.issuebook.objects.all()
     bookinfo = models.newbook.objects.all()
-    context = {"book":bookinfo}
+    context = {"book":bookinfo,"issueinfo":issueinfo}
     return render(request,'available.html',context)
+
+def statisics(request):
+    objiss = models.issuebook.objects.all()
+    objret = models.returnbook.objects.all()
+    context = {"iss":objiss,"ret":objret}
+    return render(request,"statistics.html",context)

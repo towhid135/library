@@ -14,6 +14,7 @@ urlpatterns = [
     path('issue/', views.issuebook),
     path('available/',views.showbook),
     path('search/',views.search),
+    path("stat/",views.statisics),
     path('admin/', admin.site.urls),
 ]
 

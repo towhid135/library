@@ -19,7 +19,7 @@ body{
 }
 
 .availablebox input{
-	width:30%%;
+	width:30%;
 	margin-bottom:20px;
 }
 .availablebox input[type="submit"]
@@ -30,6 +30,7 @@ body{
 	background:green;
 	color:white;
 	font-size:18px;
+	width:30%;
 }
 
 table{
@@ -43,4 +44,7 @@ th {
 }
 td{
 	height: 105px;
+}
+caption{
+ position=center;
 }
