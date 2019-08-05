@@ -64,9 +64,6 @@ def search(request):
     if (request.method=="POST"):
         findbookname = request.POST.get("findbookname")
         bookcheak = models.newbook.objects.filter(bookname=findbookname)
-        sample_instance = models.newbook.objects.get(bookid=1)
-        value_of_name = sample_instance.bookname
-        print(value_of_name)
         if bookcheak:
             findobj = models.newbook.objects.filter(bookname=findbookname)
             context = {"find":findobj}
