@@ -7,9 +7,9 @@
 
 <body>
 
-<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\styletoreturn.css'%}" >
+<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\Issue1.css'%}" >
 
-<div class="loginbox">
+<div class="issuebox">
        <h1 align="center">Return</h1>
 	   <form action="" method="POST">
        {%csrf_token%}
@@ -19,7 +19,8 @@
 	   <input type="text" name="r_bid" placeholder="Enter Your Book Id">
 	    <p>Date Of Return</p>
 	   <input type="date" name="r_date" >
-		<input type="submit" value="submit">
+		   <input class="sub" type="submit" name="" value="Submit">
+	   <input class="bac" type="submit" name="" value="Home" formaction="http://127.0.0.1:8000/studentview/">
 
 	   	</form>
 </div>

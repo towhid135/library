@@ -7,10 +7,11 @@
 
 <body>
 
-<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\signupcss.css'%}">
+<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\forgot.css'%}">
 
-<div class="signupbox">
+<div class="forgotbox">
 	<h1 align="center">Password?</h1>
+	<div class="div1">
 	<form action="" method="POST">
 		{%csrf_token%}
 	   <p>User name</p>
@@ -18,14 +19,14 @@
 
 	   <p>Phone number</p>
 	   <input type="text" name="f_phone" placeholder="enter your phone number">
-		{% for retrive in getpass %}
+	   {% for retrive in getpass %}
 	   <p>Your Password</p>
 	   <input type="text" name="f_pass" value="{{retrive.password}}">
 		{% endfor %}
-	   <input type="submit" name="" value="submit">
-		<input type="submit" name="" value="Back" formaction="http://127.0.0.1:8000/">
-
-	</form>
+	   <input class="sub" type="submit" name="" value="Submit">
+		<input class="back" type="submit" name="" value="Back" formaction="http://127.0.0.1:8000/">
+    </form>
+	</div>
 </div>
 
 </body>

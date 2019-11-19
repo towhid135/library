@@ -1,4 +1,4 @@
-{%load static%}
+{%load static %}
 <html>
 
 <head>
@@ -7,13 +7,13 @@
 
 <body>
 
-<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\addbooks.css'%}" >
+<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\addbook.css'%}" >
 
-<div class="loginbox">
+<div class="bookbox">
 	<h2>Add New Book</h2>
+	<div class="subdiv">
 	<form action="" method="POST">
-		{% csrf_token %}
-
+       {%csrf_token%}
 	   <p>Book name</p>
 	   <input type="text" name="name1" placeholder="Enter Book Name">
 
@@ -34,10 +34,11 @@
 
 	   <p>Book Genre</p>
 	   <input type="text" name="genre1" placeholder="Enter Book Genre">
-		<input type="submit" name="" value="Submit">
-		<input type="submit" name="" value="Back" formaction="http://127.0.0.1:8000/adminview/">
+		<input class="submit" type="submit" name="" value="Submit">
+		<input class="home" type="submit" name="" value="Home" formaction="http://127.0.0.1:8000/adminview/">
 
 	</form>
+	</div>
 </div>
 
 </body>

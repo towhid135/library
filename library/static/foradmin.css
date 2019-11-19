@@ -1,0 +1,94 @@
+body{
+  background:url("library2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.adminbox{
+	width: 420px;
+	height: 520px;
+	top:50%;
+	left:50%;
+	background:#c7ecee;
+	background-repeat:no-repeat;
+	background-size:auto;
+	background-size:420px 520px;
+	color:white;
+	position:absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	padding:50px 30px;
+	border-radius:25px 25px 25px 25px;
+}
+
+h2{
+	margin:0;
+	padding:0 0 20px;
+	text-align:center;
+	font-size:40px;
+	color:black;
+}
+
+.adminbox input[type="submit"]
+{
+	height:40px;
+	background-color:white;
+	color:black;
+	font-size:15px;
+	width:35%;
+	border-color:white;
+	font-weight:bold;
+}
+
+.add{
+	position:relative;
+	left:7%;
+}
+.stat{
+	position:relative;
+	top:10px;
+	left:52%;
+}
+.b_add{
+	position:relative;
+	top:5px;
+}
+.b_stat{
+	position:relative;
+	left:32.5%;
+	top:5px;
+}
+.sign{
+	position:relative;
+	top:105px;
+	left:35%;
+	background:url("logout.png");
+	text-align:left;
+	background-position:right;
+	background-size: 30px 30px;
+	background-repeat:no-repeat;
+	font-size:20px;
+	background-color:#c7ecee;
+	border-color:#c7ecee;
+	padding-left:15px;
+}
+.avail{
+	position:relative;
+	left:7%;
+	top:30px;
+}
+.mem{
+	position:relative;
+	top:30px;
+	left:52%;
+}
+.b_avail{
+	position:relative;
+    top:40px;
+}
+.b_mem{
+	position:relative;
+	left:33%;
+	top:40px;
+}
+	

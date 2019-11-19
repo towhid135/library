@@ -1,40 +1,47 @@
 {%load static%}
-<html>
-
-<head>
-<title> library management system </title>
-</head>
+<head> <title> Online Library Management System </title> </head>
 
 <body>
 
-<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\search.css'%}" >
+<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\search1.css'%}" >
 
-<div class="availablebox">
-	<form action="" method="POST">
-       {%csrf_token%}
-	   <h2 align="center">Search Books</h2>
-        <input type="text" name="findbookname" placeholder="Enter book name"> <input type="submit"  value="search">
-        <table style="height:50%">
-  <tr style="background-color:white">
-    <th>BookID</th>
-    <th>Name</th>
-    <th>Author</th>
-  </tr>
-   {% for fb in find %}
-  <tr style="background-color:white">
-
-    <td width="600">{{fb.bookid}}</td>
-    <td width="600">{{fb.bookname}}</td>
-    <td width="600">{{fb.author}}</td>
-
-  </tr>
-    {%endfor%}
+<div class="inp">
+    <form action="" method="POST">
+	{%csrf_token%}
+     <input class="text" type="text" name="findbookname" placeholder="Enter Books Name">
+      <input class="sub" type="submit" value="">
+<div class="search">
+       <table class="result">
+               <thead>
+			      <tr>
+                    <th>Books ID</th>
+                    <th>Name</th>
+                    <th>Author</th>
+                  </tr>
+                </thead>
 
 
-   </table>
-        <input type="submit" name="s_issue" value="Issue Book" formaction="http://127.0.0.1:8000/issue/">
+                <tbody>
+                {% for fb in find %}
+                  <tr>
 
-	</form>
+                    <td>{{fb.bookid}}</td>
+                    <td>{{fb.bookname}}</td>
+                    <td>{{fb.author}}</td>
+
+                  </tr>
+                  {% endfor %}
+                </tbody>
+
+
+       </table>
+
+</div>
+        <input class="issue" type="submit" name="s_issue" value="Issue" formaction="http://127.0.0.1:8000/issue/">
+        <input class="home" type="submit" value="Home" formaction="http://127.0.0.1:8000/studentview/">
+
+    </form>
+
 </div>
 
 </body>

@@ -9,12 +9,14 @@ urlpatterns = [
     path('forgot/',views.forgotpass),
     path('addnewbook/',views.addnewbook),
     path('adminview/',views.foradmin),
+    path('availableforadmin/',views.availableforadmin),
     path('studentview/', views.forstudent),
     path('return/', views.returnbook),
     path('issue/', views.issuebook),
     path('available/',views.showbook),
     path('search/',views.search),
     path("stat/",views.statisics),
+    path("member/",views.member),
     path('admin/', admin.site.urls),
 ]
 

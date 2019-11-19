@@ -1,0 +1,52 @@
+{% load static %}
+<html>
+<head>
+<title> library management system </title>
+</head>
+
+<body>
+
+<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\availableforadmin.css'%}" >
+<h2> Available Books </h2>
+
+<div class="availablebox">
+<form action="" method="POST">
+{% csrf_token %}
+<table class="avail">
+<thead>
+  <tr>
+    <th>Books ID</th>
+    <th>Name</th>
+    <th>Author</th>
+	<th>Genre</th>
+  </tr>
+</thead>
+
+<tbody>
+{% for binfo in book%}
+  <tr>
+
+    <td>{{binfo.bookid}}</td>
+    <td>{{binfo.bookname}}</td>
+    <td>{{binfo.author}}</td>
+	<td>{{binfo.genre}}</td>
+
+  </tr>
+	{%endfor%}
+</tbody>
+
+
+
+</table>
+
+</form>
+</div>
+
+<div class="hbtn">
+<form action="" method="POST">
+    {%csrf_token%}
+<input class="home" type="submit" value="Home" formaction="http://127.0.0.1:8000/adminview/">
+</form>
+</div>
+
+</body>

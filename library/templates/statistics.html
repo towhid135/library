@@ -1,75 +1,84 @@
 {%load static%}
-<html>
-<head>
-<title> library management system </title>
-</head>
+<head> <title> Online Library Management System </title> </head>
 
 <body>
 
-<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\available.css'%}" >
+<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\statistics1.css'%}"
 
-<div class="availablebox">
-	<form action="" method="POST">
-       {%csrf_token%}
-
-<caption > <font size="5" color="white">Issued Books</font> </caption>
-<table style="height:50%">
-  <tr style="background-color:white">
-    <th>Books ID</th>
-    <th>Book Name</th>
-    <th>Author</th>
-      <th>Student ID</th>
-      <th>Student Name</th>
-	<th>Date of Issue</th>
-  </tr>
-  {% for IsInfo in iss%}
-  <tr style="background-color:white">
-
-    <td width="600">{{IsInfo.bookid}}</td>
-    <td width="600">{{IsInfo.bookname}}</td>
-    <td width="600">{{IsInfo.author}}</td>
-      <td width="600">{{IsInfo.memberid}}</td>
-      <td width="600">{{IsInfo.membername}}</td>
-	<td width="600">{{IsInfo.issuedate}}</td>
-
-  </tr>
-    {%endfor%}
+    <form action="" method="POST">
+	  {%csrf_token%}
+<p class="name1"> Issued Books </p>
+<div class="issue">
+       <table class="issueinfo">
+               <thead>
+			      <tr>
+                    <th>Books ID</th>
+                    <th>Name</th>
+                    <th>Author</th>
+					<th>Member ID</th>
+					<th>Member Name</th>
+                  </tr>
+                </thead>
 
 
+                <tbody>
+				{% for IsInfo in iss%}
+                  <tr>
+
+                    <td>{{IsInfo.bookid}}</td>
+                    <td>{{IsInfo.bookname}}</td>
+                    <td>{{IsInfo.author}}</td>
+					<td>{{IsInfo.memberid}}</td>
+					<td>{{IsInfo.name}}</td>
+
+                  </tr>
+			    {%endfor%}
+                </tbody>
 
 
-</table>
+       </table>
 
-<caption > <font size="5" color="white">Returned Books</font> </caption>
-<table style="height:50%">
-  <tr style="background-color:white">
-    <th>Books ID</th>
-    <th>Book Name</th>
-    <th>Author</th>
-      <th>Student ID</th>
-      <th>Student Name</th>
-	<th>Date of Return</th>
-  </tr>
-  {% for retinfo in ret%}
-  <tr style="background-color:white">
-
-    <td width="600">{{retinfo.bookid}}</td>
-    <td width="600">{{retinfo.bookname}}</td>
-    <td width="600">{{retinfo.author}}</td>
-      <td width="600">{{retinfo.memberid}}</td>
-      <td width="600">{{retinfo.membername}}</td>
-	<td width="600">{{retinfo.returndate}}</td>
-
-  </tr>
-    {%endfor%}
-
-
-
-</table>
-
-<input type="submit" value="Back" formaction="http://127.0.0.1:8000/adminview/">
-
-	</form>
 </div>
+
+<p class="name2"> Returned Books </p>
+<div class="return">
+       <table class="returninfo">
+               <thead>
+			      <tr>
+                    <th>Books ID</th>
+                    <th>Name</th>
+                    <th>Author</th>
+					<th>Member ID</th>
+					<th>Member Name</th>
+                  </tr>
+                </thead>
+
+
+                <tbody>
+				{% for retinfo in ret%}
+                  <tr>
+                    <td>{{retinfo.bookid}}</td>
+                    <td>{{retinfo.bookname}}</td>
+                    <td>{{retinfo.author}}</td>
+					<td>{{retinfo.memberid}}</td>
+					<td>{{retinfo.name}}</td>
+
+                  </tr>
+				{%endfor%}
+                </tbody>
+
+
+       </table>
+
+</div>
+    <div class="hbtn">
+        <form >
+            {%csrf_token%}
+     <input class="home" type="submit" value="Home" formaction="http://127.0.0.1:8000/adminview/">
+        </form>
+	  </div>
+
+    </form>
+
 
 </body>

@@ -1,5 +1,4 @@
-{%load static%}
-
+{% load static %}
 <html>
 
 <head>
@@ -7,15 +6,28 @@
 </head>
 
 <body>
+ <!-- <script type = 'text/javascript' >
 
-<h1 align="center"> <font size="+20" color="white">Welcome To The Library </font> </h1>
-<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\style.css'%}" >
+	function preventBack()
+	{
+	   window.history.forward();
+	}
+	setTimeout( "preventBack()",0);
+	window.onunload = function() {null};
+
+</script> -->
+<h1 align="center"> <font size="+20" color="black">Welcome To The Library </font> </h1>
+<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\home.css'%}" >
 
 <div class="loginbox">
-    <img src="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\login_image.png'%}" class="login_image">
+    <div class="up">
+   <img src="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\login_image.png'%}" class="login_image">
 	<h2>Login Here</h2>
+	</div>
+	<div class="down">
+
 	<form action="" method="POST">
-		{% csrf_token %}
+	   {%csrf_token%}
 	   <p>Librarian or Member</p>
 	   <input type="text" name="h_role" placeholder="Write Your Role">
 
@@ -24,11 +36,14 @@
 
 	   <p>password</p>
 	   <input type="password" name="h_pass" placeholder="Enter password">
-	   <input type="submit" name="" value="Login"> <br>
+	   <input class="log" type="submit" name="" value="Login"> <br>
 
-	   <a href="http://127.0.0.1:8000/forgot/"> <font color="white"> Forgotten password? </font> </a><br>
-       <a href="http://127.0.0.1:8000/sign/"> <font color="white"> Don't have an account? </font> </a>
+	   <a href="http://127.0.0.1:8000/forgot/"> <font color="black"> Forgotten password? </font> </a><br>
+       <a class="a2" href="http://127.0.0.1:8000/sign/"> <font color="black"> Don't have an account? </font> </a>
 	</form>
+
+	</div>
+
 </div>
 
 

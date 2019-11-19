@@ -1,0 +1,48 @@
+{%load static %}
+<head> <title> Online Library Management System </title> </head>
+
+<body>
+
+<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\member.css'%}" >
+<p class="tex">Member</p>
+<div class="inp">
+    <form action="" method="POST">
+        {%csrf_token%}
+<div class="search">
+       <table class="member">
+               <thead>
+			      <tr>
+                    <th>Memberid</th>
+                    <th>Name</th>
+                    <th>Department</th>
+					<th>Role</th>
+					<th>Phone Number</th>
+                  </tr>
+                </thead>
+
+
+                <tbody>
+                {%for m in member%}
+                  <tr>
+
+                    <td>{{m.memberid}}</td>
+                    <td>{{m.name}}</td>
+                    <td>{{m.department}}</td>
+					<td>{{m.role}}</td>
+                    <td>{{m.phone}}</td>
+
+                  </tr>
+                {%endfor%}
+                </tbody>
+
+
+       </table>
+
+</div>
+        <input class="home" type="submit" value="Home" formaction="http://127.0.0.1:8000/adminview/">
+
+    </form>
+
+</div>
+
+</body>

@@ -1,37 +1,46 @@
 {%load static%}
-
-
-<html>
-
-<head>
-<title> library management system </title>
-</head>
+<head> <title> Online Library Management System </title> </head>
 
 <body>
 
-<h1 align="center"> <font size="+20" color="white">Welcome To The Library </font> </h1>
-<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\style.css'%}" >
+<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\example.css'%}" >
 
-<div class="loginbox">
-    <img src="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\login_image.png'%}" class="login_image">
-	<h2>Login Here</h2>
-	<form action="">
-        {% csrf_token %}
-       {% for i in tes%}
-	   <p>User name</p>
-	   <input type="text"  placeholder="{{i.myname}}">
+<div class="inp">
+    <form action="" method="POST">
+	{%csrf_token%}
+     <input class="text" type="text" name="findbookname" placeholder="Enter Books Name">
+      <input class="sub" type="submit" value="">
 
-	   <p>password</p>
-	   <input type="password"  placeholder="{{i.password}}">
-		{%endfor%}
+<div class="search">
+       <table class="result">
+               <thead>
+			      <tr>
+                    <th>Books ID</th>
+                    <th>Name</th>
+                    <th>Author</th>
+                  </tr>
+                </thead>
 
-	   <input type="submit" name="pracsubmit" value="Login">
-	</form>
+                {% for fb in find %}
+                <tbody>
+                  <tr>
+
+                    <td>{{fb.bookid}}</td>
+                    <td>{{fb.bookname}}</td>
+                    <td>{{fb.author}}</td>
+
+                  </tr>
+
+                </tbody>
+				{% endfor %}
+
+       </table>
+
+</div>
+<input class="issue" type="submit" name="s_issue" value="Issue" formaction="http://127.0.0.1:8000/issue/">
+<input class="home" type="submit" value="Home" formaction="">
+ </form>
+
 </div>
 
-
 </body>
-
-
-</html>
-

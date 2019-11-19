@@ -1,0 +1,80 @@
+body{
+  background: url("library2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bookbox{
+	width:  320px;
+	height: 620px;
+	top:50%;
+	left:50%;
+	background:#c7ecee;
+	background-repeat:no-repeat;
+	background-size:auto;
+	background-size: 320px 620px;
+	position:absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	padding:50px,50px;
+}
+.bookbox p{
+	margin:0;
+	padding:0;
+	font-weight:bold;
+	color:black;
+}
+.bookbox input[type="text"]{
+	width:80%;
+	margin-bottom:20px;
+	background:#95a5a6;
+	color:black;
+	border-color:#95a5a6;
+}
+.bookbox input[type="submit"]
+{
+	position:relative;
+	height:35px;
+	width:35%;
+	background-color:white;
+	color:black;
+	border-color:#c7ecee;
+	font-size:18px;
+	left:5%;
+}
+
+
+h2 {
+	position:relative;
+	top:10px;
+	color:black;
+	left:22.5%;
+}
+.subdiv{
+	position:relative;
+	left:10%;
+}
+.submit{
+	background:url("submit.png");
+	font-weight:bold;
+	text-align:left;
+	background-position:right;
+	background-size: 35px 35px;
+	background-repeat:no-repeat;
+	font-size:20px;
+	background-color:#c7ecee;
+	border-color:#c7ecee;
+	
+}
+.home{
+	background:url("house.png");
+	font-weight:bold;
+	text-align:left;
+	background-position:right;
+	background-size: 35px 35px;
+	background-repeat:no-repeat;
+	font-size:20px;
+	background-color:#c7ecee;
+	border-color:#c7ecee;
+}

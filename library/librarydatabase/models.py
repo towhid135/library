@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Subquery
 from datetime import datetime,date
 
 class signtable(models.Model):
@@ -11,7 +12,7 @@ class signtable(models.Model):
     role = models.CharField(max_length=200)
 
     def __str__(self):
-       return self.name+"-"+self.memberid
+       return self.memberid
 
 class newbook(models.Model):
     bookname = models.CharField(max_length=200,default="null")

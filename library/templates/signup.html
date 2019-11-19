@@ -1,5 +1,4 @@
-{%load static%}
-
+{% load static %}
 <html>
 
 <head>
@@ -8,12 +7,17 @@
 
 <body>
 
-<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\signupcss.css'%}" >
+<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\signup.css'%}" >
 
 <div class="signupbox">
-	<h1 align="center">signup</h1>
+    <div class="up">
+   <img src="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\login_image.png'%}" class="sign_img">
+	<h1 align="center">SignUp</h1>
+	</div>
+
+	<div class="down">
 	<form action="" method="POST">
-		{% csrf_token %}
+	{% csrf_token %}
 	   <p>User name</p>
 	   <input type="text" name="s_user" placeholder="Enter Username">
 
@@ -33,11 +37,11 @@
 	   <input type="text" name="s_phone" placeholder="Enter your Phone number">
 		<p>Role(Librarian or Member)</p>
 	   <input type="text" name="s_role" placeholder="Enter your role">
-	   <input type="submit" name="" value="Submit">
-	   <input type="submit" name="" value="Back" formaction="http://127.0.0.1:8000/">
+	   <input class="sub" type="submit" name="" value="Submit">
+	   <input class="back" type="submit" name="" value="Back" formaction="http://127.0.0.1:8000/">
+	   </form>
 
-
-	</form>
+	   </div>
 </div>
 
 </body>

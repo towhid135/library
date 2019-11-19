@@ -1,0 +1,88 @@
+body{
+  background: url("library2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.sign_img{
+	width:70px;
+	height:70px;
+	top:32%;
+	left:50%;
+	position:absolute;
+	transform:translate(-50%,-320%)
+}
+.signupbox{
+	width:  320px;
+	height: 620px;
+	top:55%;
+	left:50%;
+	background:#c7ecee;
+	background-repeat:no-repeat;
+	background-size:auto;
+	background-size: 320px 620px;
+	position:absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	padding:50px,50px;
+	border-radius:25px 25px 25px 25px;
+}
+.signupbox p{
+	margin:0;
+	padding:0;
+	font-weight:bold;
+	color:black;
+}
+.signupbox input[type="text"],input[type="password"]{
+	width:80%;
+	margin-bottom:20px;
+	background:#95a5a6;
+	color:black;
+	border-color:#95a5a6;
+}
+.sub
+{
+	height:40px;
+	width:35%;
+	background:url("submit.png");
+	font-weight:bold;
+	text-align:left;
+	background-position:right;
+	background-size: 30px 30px;
+	background-repeat:no-repeat;
+	background-color:white;
+	border-color:white;
+	font-size:18px;
+
+}
+
+.back
+{
+	height:40px;
+	width:35%;
+	background:url("back.png");
+	font-weight:bold;
+	text-align:left;
+	background-position:right;
+	background-size: 30px 30px;
+	background-repeat:no-repeat;
+	background-color:white;
+	border-color:white;
+	font-size:18px;
+
+}
+
+.down{
+	position:relative;
+	left:11%;
+}
+.down input[type="submit"]
+{
+	position:relative;
+	left:5%;
+}
+h1 {
+	position:relative;
+	top:10px;
+	color:black;
+}

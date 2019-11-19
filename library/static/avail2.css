@@ -1,0 +1,105 @@
+body{
+  background:#d1ccc0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x:hidden;
+}
+.availablebox{
+	position:absolute;
+	top:40px;
+	left:30%;
+	width:600px;
+	height:500px;
+	background-color:#c7ecee;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+*{
+  font-family: sans-serif;
+}
+.avail{
+	border-collapse:collapse;
+	margin:25px 0;
+	font-size:0.9em;
+	min-height:100px;
+	width:600px;
+	border-radius:5px 5px 0 0;
+	box-shadow:0 0 20px rgba(0,0,0,0.15);
+}
+.avail thead tr{
+	background-color:#009879;
+	color:#ffffff;
+	text-align:left;
+	font-weight:bold;
+}
+.avail th,td{
+	padding:12px 15px;
+}
+.avail tbody tr{
+	border-bottom:1px solid #dddddd;
+}
+.avail tbody tr:nth-of-type(even){
+	background:#f3f3f3;
+}
+.avail tbody tr:last-of-type{
+	border-bottom:2px solid #009879;
+}
+h2 {
+	color:#009879;
+	position:relative;
+	top:5px;
+	left:45%;
+}
+
+table{
+	position:relative;
+	bottom:30px;
+}
+
+.btn{
+	position:relative;
+	top:500px;
+	left:35%;
+}
+.home{
+	background:url("house.png");
+	font-weight:bold;
+	text-align:left;
+	width:10%;
+	height:35px;
+	background-position:right;
+	background-size: 35px 35px;
+	background-repeat:no-repeat;
+	font-size:20px;
+	background-color:#c7ecee;
+	border-color:#c7ecee;
+	right:5px;
+}
+.issue{
+	background:url("Issue.gif");
+	font-weight:bold;
+	text-align:left;
+	width:10%;
+	height:35px;
+	background-position:right;
+	background-size: 35px 35px;
+	background-repeat:no-repeat;
+	font-size:20px;
+	background-color:#c7ecee;
+	border-color:#c7ecee;
+	right:5px;
+}
+.search{
+	background:url("search2.png");
+	font-weight:bold;
+	text-align:left;
+	width:10%;
+	height:35px;
+	background-position:right;
+	background-size: 35px 35px;
+	background-repeat:no-repeat;
+	font-size:20px;
+	background-color:#c7ecee;
+	border-color:#c7ecee;
+}

@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from librarydatabase import models
+from django.db.models import Subquery
+#from django.contrib.auth.models import *
 
 def returnbook(request):
     if (request.method=='POST'):
@@ -63,13 +65,31 @@ def issuebook(request):
 def search(request):
     if (request.method=="POST"):
         findbookname = request.POST.get("findbookname")
-        bookcheak = models.newbook.objects.filter(bookname=findbookname)
-        if bookcheak:
-            findobj = models.newbook.objects.filter(bookname=findbookname)
-            context = {"find":findobj}
+        #bookcheak = models.newbook.objects.filter(bookname__iexact=findbookname)
+        bookcheak = models.newbook.objects.filter(bookname__contains = findbookname).order_by('bookname')
+        if bookcheak and findbookname:
+            context = {"find":bookcheak}
             return render(request,"search.html",context)
         else:
-            return render(request,"search.html")
+            st = ''
+            for j in findbookname:
+                if j != ' ':
+                    st += j
+                else:
+                    break;
+            if findbookname:
+                bookcheak = models.newbook.objects.filter(bookname__startswith = st).order_by('bookname')
+                if bookcheak:
+                    context = {"find": bookcheak}
+                    return render(request, "search.html", context)
+                else:
+                    st = st[0]
+                    bookcheak = models.newbook.objects.filter(bookname__startswith=st).order_by('bookname')
+                    context = {"find": bookcheak}
+                    return render(request, "search.html", context)
+            else:
+                return render(request, "search.html")
+
     else:
         return render(request, "search.html")
 
@@ -159,13 +179,22 @@ def foradmin(request):
 def forstudent(request):
     return render(request, "forstudent.html")
 def showbook(request):
-    issueinfo= models.issuebook.objects.all()
-    bookinfo = models.newbook.objects.all()
-    context = {"book":bookinfo,"issueinfo":issueinfo}
+    bookinfo = models.newbook.objects.all().order_by('bookid')
+    #separate = models.issuebook.objects.all();
+    #bookinfo = models.newbook.objects.filter(bookid__in = Subquery(separate.values('bookid')))
+    context = {"book":bookinfo}
     return render(request,'available.html',context)
 
 def statisics(request):
-    objiss = models.issuebook.objects.all()
-    objret = models.returnbook.objects.all()
+    objiss = models.issuebook.objects.all().order_by('bookid')
+    objret = models.returnbook.objects.all().order_by('bookid')
     context = {"iss":objiss,"ret":objret}
     return render(request,"statistics.html",context)
+def availableforadmin(request):
+    bookinfo = models.newbook.objects.all().order_by('bookid') #'-bookid' dile descending order
+    context = {"book": bookinfo}
+    return render(request,"availableforadmin.html",context)
+def member(request):
+    mem = models.signtable.objects.all().order_by('memberid')
+    context = {'member':mem}
+    return render(request,'member.html',context)

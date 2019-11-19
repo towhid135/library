@@ -1,0 +1,129 @@
+body{
+	background:#d1ccc0;
+	height:100%;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	overflow-x:hidden;
+
+}
+
+*{
+  font-family: sans-serif;
+}
+
+.search{
+	position:relative;
+	top:40px;
+	left:30%;
+	width:600px;
+	height:400px;
+	background-color:#c7ecee;
+	overflow-y:auto;
+}
+.inp input[type="text"]{
+	width:30%;
+	height:30px;
+	border-radius:25px 25px 25px 25px;
+	font-weight:bold;
+	font-size:20px;
+	background-color:#dff9fb;
+	border-color:#dff9fb;
+	text-align:center;
+
+}
+.sub
+{
+	background:url("search.png");
+    width:10%;
+	height:35px;
+	border-radius:25px 25px 25px 25px;
+	font-weight:bold;
+	font-size:20px;
+	background-repeat:no-repeat;
+	background-size: 30px 30px;
+	background-position:center;
+	background-color:#0984e3;
+	border-color:#0984e3;
+
+}
+.sub{
+	position:relative;
+	top:12px;
+	left:32.5%;
+}
+.text{
+	position:relative;
+	left:32.5%;
+}
+.result{
+	border-collapse:collapse;
+	margin:25px 0;
+	font-size:0.9em;
+	min-height:100px;
+	width:550px;
+	border-radius:5px 5px 0 0;
+	box-shadow:0 0 20px rgba(0,0,0,0.15);
+}
+.result thead tr{
+	background-color:#009879;
+	color:#ffffff;
+	text-align:left;
+	font-weight:bold;
+}
+.result th,td{
+	padding:12px 15px;
+}
+.result tbody tr{
+	border-bottom:1px solid #dddddd;
+}
+.result tbody tr:nth-of-type(even){
+	background:#f3f3f3;
+}
+.result tbody tr:last-of-type{
+	border-bottom:2px solid #009879;
+}
+table{
+	position:relative;
+	top:0px;
+	left:16px;
+}
+.issue , .home{
+	position:relative;
+	top:70px;
+	left:42%;
+	height:35px;
+	width:10%;
+}
+.issue{
+	background:url("ibook.png");
+	font-weight:bold;
+	text-align:left;
+	background-position:right;
+	background-size: 35px 35px;
+	background-repeat:no-repeat;
+	font-size:20px;
+	background-color:#c7ecee;
+	border-color:#c7ecee;
+}
+.home{
+	background:url("house.png");
+	font-weight:bold;
+	text-align:left;
+	background-position:right;
+	background-size: 35px 35px;
+	background-repeat:no-repeat;
+	font-size:20px;
+	left:44%;
+	background-color:#c7ecee;
+	border-color:#c7ecee;
+}
+.inp{
+  position:relative;
+  top:40px;
+}
+p{
+ color:black;
+ font-size:200px;
+ position:left;
+}

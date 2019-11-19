@@ -1,4 +1,4 @@
-{%load static%}
+{% load static %}
 <html>
 
 <head>
@@ -7,21 +7,21 @@
 
 <body>
 
-<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\styletoreturn.css'%}" >
+<link rel="stylesheet" type="text/css" href="{%static 'C:\Users\Admin\PycharmProjects\library\library\static\Issue1.css'%}" >
 
-<div class="loginbox">
+<div class="issuebox">
        <h1 align="center">Issue</h1>
 	   <form action="" method="POST">
-		   {%csrf_token%}
+		{% csrf_token %}
 
 	   <p>Member Id</p>
 	   <input type="text" name="i_mid" placeholder="Member ID">
 	    <p>Book Id</p>
-	   <input type="text" name="i_bid" placeholder="">
-	    <p>Date Of Issue</p>
+	   <input type="text" name="i_bid" placeholder="Book ID">
+	   <p>Date Of Issue</p>
 	   <input type="date" name="i_date" placeholder="Date of Issue">
-       <input type="submit" name="" value="submit">
-		<input type="submit" name="" value="Back" formaction="http://127.0.0.1:8000/available/">
+       <input class="sub" type="submit" name="" value="Submit">
+	   <input class="bac" type="submit" name="" value="Back" formaction="http://127.0.0.1:8000/available/">
 	   	</form>
 </div>
 
